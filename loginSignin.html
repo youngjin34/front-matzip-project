@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"
+    />
+    <link rel="stylesheet" href="./css/loginSignin.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div class="welcome">
+        <div class="pinkbox">
+          <div class="signup nodisplay">
+            <h1>register</h1>
+            <form autocomplete="off">
+              <input id="username" type="text" placeholder="id" required />
+              <input id="email" type="email" placeholder="email" required />
+              <input
+                id="password"
+                type="password"
+                placeholder="password"
+                required
+              />
+              <input
+                id="confirm-password"
+                type="password"
+                placeholder="confirm password"
+                required
+              />
+              <button id="register-btn" type="submit" class="button submit">
+                create account
+              </button>
+            </form>
+          </div>
+          <div class="signin">
+            <h1>sign in</h1>
+            <form class="more-padding" autocomplete="off">
+              <input id="signin-id" type="text" placeholder="id" required />
+              <input
+                id="signin-pwd"
+                type="password"
+                placeholder="password"
+                required
+              />
+              <div class="checkbox">
+                <input type="checkbox" id="remember" /><label for="remember"
+                  >remember me</label
+                >
+              </div>
+              <button id="signin-btn" type="submit" class="button submit">
+                login
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="leftbox">
+          <h2 class="title"><span>DELICIOUS</span>&<br />COFFEE</h2>
+          <p class="desc">pick your perfect <span>coffee</span></p>
+          <img
+            class="flower smaller"
+            src="https://plus.unsplash.com/premium_photo-1674327105074-46dd8319164b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="1357d638624297b"
+            border="0"
+          />
+          <p class="account">have an account?</p>
+          <button class="button" id="signin">login</button>
+        </div>
+        <div class="rightbox">
+          <h2 class="title"><span>DELICIOUS</span>&<br />COFFEE</h2>
+          <p class="desc">pick your perfect <span>coffee</span></p>
+          <img
+            class="flower"
+            src="https://images.unsplash.com/photo-1498603536246-15572faa67a6?q=80&w=2000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          />
+          <p class="account">don't have an account?</p>
+          <button class="button" id="signup">sign up</button>
+        </div>
+      </div>
+    </div>
+    <script src="../js/loadHeader.js"></script>
+    <script src="./js/signin.js"></script>
+    <script src="./js/register.js"></script>
+  </body>
+</html>

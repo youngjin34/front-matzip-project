@@ -1,0 +1,342 @@
+body {
+  background-color: rgba(31, 41, 55);
+}
+
+/* ---------------- 폰트 --------------- */
+@font-face {
+  font-family: 'GangwonEduPowerExtraBoldA';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: '양진체';
+  src: url('https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* -------------- 헤더 ----------------- */
+
+header {
+  position: fixed;
+  height: 120px;
+  width: 100%;
+  background-color: rgba(31, 41, 55);
+  color: white;
+
+  display: flex;
+  border-bottom: 1px solid rgba(999, 999, 999, 0.3);
+}
+
+header > h2 {
+  font-size: 24px;
+  font-family: 'GangwonEduPowerExtraBoldA';
+  padding: 30px;
+  line-height: 34px;
+}
+
+header > h2 > a {
+  text-decoration: none;
+  color: white;
+}
+
+/* ------------- 네비게이션 ------------- */
+
+.navigation {
+  padding: 30px;
+  padding-left: 300px;
+}
+
+.navigation a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+
+.login,
+.logout {
+  position: absolute;
+  right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Jelly 애니메이션 */
+.btn-jelly {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.btn-jelly:hover {
+  animation: jelly 0.5s ease-in-out;
+  color: rgb(191, 207, 230);
+}
+
+@keyframes jelly {
+  0%,
+  100% {
+    transform: scale(1, 1);
+  }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}
+
+/* ---------------로그인, 회원가입 폼 ------------------- */
+/* Color Variables */
+:root {
+  --gray: #8e9aaf;
+  --lavender: #cbc0d3;
+  --pale: #eac7cc;
+  --white: #f6f6f6;
+  --pink: #c597a1; /* darkened version of $pale */
+  --sans-serif: 'Open Sans', sans-serif;
+  --serif: 'Lora', serif;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
+
+img {
+  border-radius: 20px;
+}
+
+/* div box styling */
+.container {
+  position: relative;
+  /* left: 33%; */
+  top: 250px;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.welcome {
+  background: var(--white);
+  width: 900px;
+  height: 500px;
+  position: absolute;
+  top: 40%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.pinkbox {
+  position: absolute;
+  top: -10%;
+  left: 10%;
+  background-color: rgb(78, 89, 104);
+  width: 400px;
+  height: 600px;
+  border-radius: 5px;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.nodisplay {
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.leftbox,
+.rightbox {
+  position: absolute;
+  width: 50%;
+  transition: 1s all ease;
+}
+
+.leftbox {
+  left: -2%;
+}
+
+.rightbox {
+  right: -2%;
+}
+
+h1 {
+  font-family: var(--sans-serif);
+  text-align: center;
+  margin-top: 95px;
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 2em;
+  letter-spacing: 8px;
+}
+
+.title {
+  font-family: var(--serif);
+  color: var(--gray);
+  font-size: 1.8em;
+  line-height: 1.1em;
+  letter-spacing: 3px;
+  text-align: center;
+  font-weight: 300;
+  margin-top: 20%;
+}
+
+.desc {
+  margin-top: -8px;
+}
+
+.account {
+  margin-top: 45%;
+  font-size: 10px;
+}
+
+p {
+  font-family: var(--sans-serif);
+  font-size: 0.7em;
+  letter-spacing: 2px;
+  color: var(--gray);
+  text-align: center;
+}
+
+span {
+  color: var(--pale);
+}
+
+.flower {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 46%;
+  left: 29%;
+  opacity: 0.7;
+}
+
+.smaller {
+  width: 90px;
+  height: 100px;
+  top: 48%;
+  left: 38%;
+  opacity: 0.9;
+}
+
+button {
+  padding: 12px;
+  font-family: var(--sans-serif);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  border-radius: 10px;
+  margin: auto;
+  outline: none;
+  display: block;
+}
+
+button:hover {
+  background: var(--pale);
+  color: var(--white);
+  transition: background-color 1s ease-out;
+}
+
+.button {
+  margin-top: 3%;
+  background: var(--white);
+  color: var(--pink);
+  border: solid 1px var(--pale);
+}
+
+/* form styling */
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 7px;
+}
+
+.more-padding {
+  padding-top: 35px;
+}
+
+.more-padding input {
+  padding: 12px;
+}
+
+.more-padding .submit {
+  margin-top: 45px;
+}
+
+.submit {
+  margin-top: 25px;
+  padding: 12px;
+  border-color: var(--pink);
+}
+
+.submit:hover {
+  background: var(--lavender);
+  border-color: #b3a3b8; /* darkened version of lavender */
+}
+
+input {
+  width: 65%;
+  background-color: rgb(78, 89, 104);
+  font-family: '양진체';
+  color: var(--pink);
+  border: none;
+  border-bottom: 1px solid rgba(246, 246, 246, 0.5);
+  padding: 9px;
+  margin: 7px;
+}
+
+input::placeholder {
+  color: rgba(246, 246, 246, 1);
+  letter-spacing: 2px;
+  font-size: 1.3em;
+  font-weight: 100;
+}
+
+input:focus {
+  color: var(--pink);
+  outline: none;
+  border-bottom: 1.2px solid rgba(198, 151, 161, 0.7);
+  font-size: 1em;
+  transition: 0.8s all ease;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
+
+label {
+  font-family: var(--sans-serif);
+  color: var(--pink);
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+
+.checkbox {
+  display: inline;
+  white-space: nowrap;
+  position: relative;
+  left: -62px;
+  top: 5px;
+}
+
+input[type='checkbox'] {
+  width: 7px;
+  background: var(--pink);
+}
+
+.checkbox input[type='checkbox']:checked + label {
+  color: var(--pink);
+  transition: 0.5s all ease;
+}
