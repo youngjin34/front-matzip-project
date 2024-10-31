@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
-  fetch('./header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.querySelector('#header').innerHTML = data;
+  fetch("./header.html")
+    .then((response) => response.text())
+    .then((data) => {
+      document.querySelector("#header").innerHTML = data;
       showLoginStatus(); // 로그인 상태 확인 함수를 호출
     })
-    .catch(error => console.error('Error loading header:', error));
+    .catch((error) => console.error("Error loading header:", error));
 });
 
 // 로그인 상태를 확인하는 함수
@@ -28,7 +28,7 @@ function showLoginStatus() {
       event.preventDefault(); // 기본 링크 클릭 동작 방지
       localStorage.removeItem("loggedIn");
       localStorage.removeItem("loggedInUser");
-      alert("로그아웃 성공!")
+      alert("로그아웃 성공!");
       window.location.reload(); // 페이지 새로고침
     });
   }

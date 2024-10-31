@@ -1,16 +1,16 @@
 /* ---------------- 폰트 --------------- */
 @font-face {
-  font-family: 'GangwonEduPowerExtraBoldA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff')
-    format('woff');
+  font-family: "GangwonEduPowerExtraBoldA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: '양진체';
-  src: url('https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff')
-    format('woff');
+  font-family: "양진체";
+  src: url("https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -30,7 +30,7 @@ header {
 
 header > h2 {
   font-size: 24px;
-  font-family: 'GangwonEduPowerExtraBoldA';
+  font-family: "GangwonEduPowerExtraBoldA";
   padding: 30px;
   line-height: 34px;
 }
@@ -50,7 +50,7 @@ header > h2 > a {
 .navigation a {
   text-decoration: none;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .login,

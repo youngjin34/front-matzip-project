@@ -4,19 +4,22 @@ body {
 
 /* ---------------- 폰트 --------------- */
 @font-face {
-  font-family: 'GangwonEduPowerExtraBoldA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff')
-    format('woff');
+  font-family: "GangwonEduPowerExtraBoldA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: '양진체';
-  src: url('https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff')
-    format('woff');
+  font-family: "양진체";
+  src: url("https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
+}
+
+.all-container {
 }
 
 /* -------------- 헤더 ----------------- */
@@ -34,7 +37,7 @@ header {
 
 header > h2 {
   font-size: 24px;
-  font-family: 'GangwonEduPowerExtraBoldA';
+  font-family: "GangwonEduPowerExtraBoldA";
   padding: 30px;
   line-height: 34px;
 }
@@ -109,11 +112,11 @@ header > h2 > a {
   --pale: #eac7cc;
   --white: #f6f6f6;
   --pink: #c597a1; /* darkened version of $pale */
-  --sans-serif: 'Open Sans', sans-serif;
-  --serif: 'Lora', serif;
+  --sans-serif: "Open Sans", sans-serif;
+  --serif: "Lora", serif;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400|Lora");
 
 img {
   border-radius: 20px;
@@ -123,15 +126,15 @@ img {
 .container {
   position: relative;
   /* left: 33%; */
-  top: 250px;
-  width: 900px;
+  width: 800px;
+  height: 600px;
   margin: 0 auto;
 }
 
 .welcome {
   background: var(--white);
-  width: 900px;
-  height: 500px;
+  width: 800px;
+  height: 400px;
   position: absolute;
   top: 40%;
   border-radius: 5px;
@@ -143,8 +146,8 @@ img {
   top: -10%;
   left: 10%;
   background-color: rgb(78, 89, 104);
-  width: 400px;
-  height: 600px;
+  width: 300px;
+  height: 500px;
   border-radius: 5px;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.5s ease-in-out;
@@ -289,7 +292,7 @@ form {
 input {
   width: 65%;
   background-color: rgb(78, 89, 104);
-  font-family: '양진체';
+  font-family: "양진체";
   color: var(--pink);
   border: none;
   border-bottom: 1px solid rgba(246, 246, 246, 0.5);
@@ -331,12 +334,20 @@ label {
   top: 5px;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   width: 7px;
   background: var(--pink);
 }
 
-.checkbox input[type='checkbox']:checked + label {
+.checkbox input[type="checkbox"]:checked + label {
   color: var(--pink);
   transition: 0.5s all ease;
+}
+
+/* ------------ 푸터 -------------- */
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }

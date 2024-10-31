@@ -4,23 +4,28 @@ body {
 
 /* ---------------- 폰트 --------------- */
 @font-face {
-  font-family: 'GangwonEduPowerExtraBoldA';
-  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff')
-    format('woff');
+  font-family: "GangwonEduPowerExtraBoldA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEduPowerExtraBoldA.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: '양진체';
-  src: url('https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff')
-    format('woff');
+  font-family: "양진체";
+  src: url("https://fastly.jsdelivr.net/gh/supernovice-lab/font@0.9/yangjin.woff")
+    format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
-/* -------------- 헤더 ----------------- */
+.all-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
+/* -------------- 헤더 ----------------- */
 header {
   position: fixed;
   height: 120px;
@@ -33,7 +38,7 @@ header {
 
 header > h2 {
   font-size: 24px;
-  font-family: 'GangwonEduPowerExtraBoldA';
+  font-family: "GangwonEduPowerExtraBoldA";
   padding: 30px;
   line-height: 34px;
 }
@@ -110,7 +115,7 @@ header > h2 > a {
 
 /* ---------- 메인화면 게시판 리스트 ------------- */
 .board-list-title {
-  width: 300px;
+  width: 200px;
   height: 70px;
   background-color: rgba(191, 207, 230, 0.6);
   border-radius: 20px;
@@ -122,14 +127,13 @@ header > h2 > a {
 .board-list-title > a {
   text-decoration: none;
   color: white;
-  font-size: 22px;
-  font-family: '양진체';
-  font-weight: bold;
+  font-size: 18px;
+  font-family: "양진체";
 }
 
 .board {
   width: 100%;
-  height: 80vh;
+  height: 50vh;
   background-color: rgba(62, 76, 95, 0.1);
   border-radius: 20px;
 
@@ -142,14 +146,13 @@ header > h2 > a {
 }
 
 .matzip > p {
-  width: 300px;
+  width: 200px;
   height: 70px;
   background-color: rgba(191, 207, 230, 0.6);
   border-radius: 20px;
   text-decoration: none;
-  font-size: 22px;
-  font-family: '양진체';
-  font-weight: bold;
+  font-size: 18px;
+  font-family: "양진체";
   color: white;
 
   display: flex;
@@ -158,6 +161,7 @@ header > h2 > a {
 }
 
 .modal {
+  position: relative;
   margin-top: 100px;
   display: flex;
   flex-direction: row;
@@ -169,6 +173,7 @@ header > h2 > a {
   width: 350px;
   height: 350px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
 .restaurant-container {
@@ -179,7 +184,7 @@ header > h2 > a {
 
 .overlay {
   font-size: 24px;
-  font-family: 'GangwonEduPowerExtraBoldA';
+  font-family: "GangwonEduPowerExtraBoldA";
   color: white;
   text-align: center;
   line-height: 70px;
@@ -239,17 +244,70 @@ header > h2 > a {
 
 .restaurant-content {
   font-size: 24px;
-  font-family: '양진체';
+  font-family: "양진체";
   color: rgb(0, 0, 0);
   line-height: 40px;
 
   padding: 20px;
 }
 
-/* ------------------- 푸터 ---------------- */
-.footer {
-  margin-top: 50px;
+/* ---------------- 게시글 목록 ----------------- */
+.close-btn img {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+#board-list {
+  width: 40%;
+  max-height: 500px;
+  margin: 0 auto;
+}
+
+#board-list-items {
+  list-style-type: none;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 30px;
+}
+
+#board-list-items > li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.board-item {
+  cursor: pointer;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.board-item:hover {
+  background-color: #d4caca;
+  color: black;
+}
+
+#board-list-modal {
+  display: none;
   width: 100%;
-  height: 300px;
-  border-top: 1px solid rgba(999, 999, 999, 0.3);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 999;
+  overflow: auto;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 0 auto;
+}
+
+/* ------------------- 푸터 -------------- */
+#footer {
+  margin-top: 100px;
 }

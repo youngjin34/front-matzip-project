@@ -1,0 +1,37 @@
+/* ------------------- 푸터 ---------------- */
+.footer {
+  width: 100%;
+  border-top: 1px solid rgba(999, 999, 999, 0.3);
+}
+
+.footer > div {
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+}
+
+.footer img {
+  margin-left: 30px;
+  width: 200px;
+  height: 90px;
+  border-radius: 10px;
+}
+
+.footer > div > span {
+  font-size: 18px;
+  font-family: "양진체";
+  color: white;
+  line-height: 30px;
+  margin-left: 250px;
+  margin-top: 50px;
+}
+
+.footer > div > h2 {
+  position: absolute;
+  right: 20px;
+  font-size: 22px;
+  font-family: "GangwonEduPowerExtraBoldA";
+  color: white;
+  padding: 30px;
+  line-height: 34px;
+}

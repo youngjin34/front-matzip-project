@@ -11,48 +11,56 @@
     <title>맛집을 추천해요!</title>
   </head>
   <body>
-    <div id="header"></div>
-    <main class="container">
-      <div class="board-list">
-        <p class="board-list-title">
-          <a href="./board.html">맛집 추천 게시판</a>
-        </p>
-        <div class="board" id="board"></div>
-      </div>
-
-      <div class="matzip">
-        <p>맛집 추천 리스트</p>
-      </div>
-
-      <section id="modal" class="modal">
-        <div class="restaurant-wrapper">
-          <div class="wrapper" id="restaurant-list">
-            <div class="restaurant-container"></div>
+    <div class="all-container">
+      <div id="header"></div>
+      <main class="container">
+        <div class="board-list">
+          <p class="board-list-title">
+            <a href="./board.html">맛집 추천 게시판</a>
+          </p>
+          <div class="board" id="board">
+            <ul id="board-list-items">
+              <span class="close-btn" id="close-modal">
+                <img src="./images/close.png" alt="닫기" />
+              </span>
+            </ul>
           </div>
         </div>
 
-        <div id="modal-container">
-          <div id="restaurant-modal">
-            <span class="close-btn" id="close-modal">
-              <img src="./images/close.png" alt="닫기" />
-            </span>
-            <div class="restaurant">
-              <div id="restaurant-img"></div>
-              <div class="restaurant-content">
-                <div id="restaurant-name"></div>
-                <div id="restaurant-address"></div>
-                <div id="restaurant-menu"></div>
+        <div class="matzip">
+          <p>맛집 추천 리스트</p>
+        </div>
+
+        <section id="modal" class="modal">
+          <div class="restaurant-wrapper">
+            <div class="wrapper" id="restaurant-list">
+              <div class="restaurant-container"></div>
+            </div>
+          </div>
+
+          <div id="modal-container">
+            <div id="restaurant-modal">
+              <span class="close-btn" id="close-modal">
+                <img src="./images/close.png" alt="닫기" />
+              </span>
+              <div class="restaurant">
+                <div id="restaurant-img"></div>
+                <div class="restaurant-content">
+                  <div id="restaurant-name"></div>
+                  <div id="restaurant-address"></div>
+                  <div id="restaurant-menu"></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer"></footer>
-
+        </section>
+      </main>
+      <div id="footer"></div>
+    </div>
     <script src="./js/loadHeader.js"></script>
+    <script src="./js/loadFooter.js"></script>
     <script src="./js/showLoginBtn.js"></script>
     <script src="./js/modal.js"></script>
+    <script src="./js/loadBoard.js"></script>
   </body>
 </html>

@@ -11,7 +11,78 @@
     <title>맛집 추천 게시판</title>
   </head>
   <body>
-    <div id="header"></div>
+    <div class="all-container">
+      <div id="header"></div>
+      <main>
+        <div class="board-write">
+          <div id="holder">
+            <div class="button" id="write-btn">
+              <p class="btnText">WRITE?</p>
+              <div class="btnTwo">
+                <p class="btnText2">GO!</p>
+              </div>
+            </div>
+          </div>
+          <div class="modal">
+            <div id="modal-container">
+              <span class="close-btn" id="close-modal">
+                <img src="./images/close.png" alt="닫기" />
+              </span>
+              <form id="board-form">
+                <input
+                  id="board-title"
+                  type="text"
+                  placeholder="제목을 입력해주세요!"
+                  maxlength="15"
+                  required
+                />
+                <textarea
+                  id="board-content"
+                  placeholder="내용을 입력해주세요!"
+                ></textarea>
+                <div>
+                  <img id="image-preview" />
+                  <label for="image-upload" class="file-upload">
+                    <span>파일 선택하기</span>
+                  </label>
+                  <input id="image-upload" type="file" accept="image/*" />
+                  <button id="board-submit">게시글 작성!</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div id="board-list">
+          <ul id="board-list-items">
+            <span class="close-btn" id="close-modal">
+              <img src="./images/close.png" alt="닫기" />
+            </span>
+          </ul>
+          <div class="modal">
+            <div id="board-list-modal"></div>
+            <div id="context-list-modal">
+              <form id="context-form">
+                <input
+                  id="context"
+                  type="text"
+                  placeholder="댓글을 남겨주세요"
+                  maxlength="15"
+                  required
+                />
+                <button type="submit">댓글 작성</button>
+              </form>
+              <div id="context-list"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div id="footer"></div>
+      </footer>
+    </div>
+
     <script src="./js/loadHeader.js"></script>
+    <script src="./js/loadFooter.js"></script>
+    <script src="./js/board.js"></script>
   </body>
 </html>
