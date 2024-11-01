@@ -2,6 +2,8 @@ const itemsPerPage = 9; // 한 페이지에 표시할 게시글 수
 let currentPage = 1; // 현재 페이지 번호
 let totalBoards = []; // 전체 게시글 배열
 
+const BOARD_KEY = "boards";
+
 // 게시글 로드 및 페이지네이션 초기화
 function loadBoards() {
   totalBoards = JSON.parse(localStorage.getItem(BOARD_KEY)) || [];
