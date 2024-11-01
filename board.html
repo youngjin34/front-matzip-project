@@ -33,7 +33,6 @@
                   id="board-title"
                   type="text"
                   placeholder="제목을 입력해주세요!"
-                  maxlength="15"
                   required
                 />
                 <textarea
@@ -52,12 +51,10 @@
             </div>
           </div>
         </div>
+
         <div id="board-list">
-          <ul id="board-list-items">
-            <span class="close-btn" id="close-modal">
-              <img src="./images/close.png" alt="닫기" />
-            </span>
-          </ul>
+          <ul id="board-list-items"></ul>
+          <!-- <div id="pagination"></div> -->
           <div class="modal">
             <div id="board-list-modal"></div>
             <div id="context-list-modal">
@@ -66,12 +63,11 @@
                   id="context"
                   type="text"
                   placeholder="댓글을 남겨주세요"
-                  maxlength="15"
                   required
                 />
                 <button type="submit">댓글 작성</button>
+                <div id="context-list"></div>
               </form>
-              <div id="context-list"></div>
             </div>
           </div>
         </div>
@@ -84,5 +80,6 @@
     <script src="./js/loadHeader.js"></script>
     <script src="./js/loadFooter.js"></script>
     <script src="./js/board.js"></script>
+    <script src="./js/boardPagenation.js"></script>
   </body>
 </html>

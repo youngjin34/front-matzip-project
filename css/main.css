@@ -2,6 +2,10 @@ body {
   background-color: rgba(31, 41, 55);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 /* ---------------- 폰트 --------------- */
 @font-face {
   font-family: "GangwonEduPowerExtraBoldA";

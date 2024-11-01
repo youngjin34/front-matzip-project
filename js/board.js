@@ -13,6 +13,7 @@ const closeBtn = document.querySelector("#close-modal");
 const boardList = document.querySelector("#board-list-items");
 const boardListModal = document.querySelector("#board-list-modal");
 
+const contextListModal = document.querySelector("#context-list-modal");
 const contextForm = document.querySelector("#context-form");
 const contextInput = document.querySelector("#context");
 
@@ -54,12 +55,14 @@ closeBtn.addEventListener("click", () => {
 window.addEventListener("click", (event) => {
   if (event.target === boardModal) {
     boardModal.style.display = "none";
+    contextListModal.style.display = "none";
     enableScroll();
   }
 });
 window.addEventListener("click", (event) => {
   if (event.target === boardListModal) {
     boardListModal.style.display = "none";
+    contextListModal.style.display = "none";
     enableScroll();
   }
 });
@@ -81,8 +84,6 @@ function enableScroll() {
 }
 
 const loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
-
-contextForm.addEventListener("submit", handleSaveContext);
 
 function handleSaveContext(boardId) {
   const context = contextInput.value;
@@ -107,6 +108,11 @@ function handleSaveContext(boardId) {
 // 댓글 불러오기 기능
 function loadComments(boardId) {
   const contextList = document.querySelector("#context-list");
+  if (!contextList) {
+    console.error("댓글 목록을 표시할 요소를 찾을 수 없습니다.");
+    return; // 요소가 없으면 함수 종료
+  }
+
   contextList.innerHTML = ""; // 기존 댓글 초기화
 
   const existingContexts = JSON.parse(localStorage.getItem(COMMENTS_KEY)) || [];
@@ -120,14 +126,16 @@ function loadComments(boardId) {
     commentItem.innerHTML = `
       <span>${comment.userId}</span>
       <p>${comment.context}</p>
-      <small>${comment.date}</small>
-      ${
-        loggedInUser && loggedInUser.userId === comment.userId
-          ? `<button class="delete-comment-btn" data-id="${comment.contextId}">삭제</button>`
-          : ""
-      }
+      <div class="date-and-btn">
+        <small>${comment.date}</small>
+        ${
+          loggedInUser && loggedInUser.userId === comment.userId
+            ? `<button class="delete-comment-btn" data-id="${comment.contextId}">삭제</button>`
+            : ""
+        }
+      </div>
     `;
-    contextList.appendChild(commentItem);
+    contextList.prepend(commentItem);
   });
 
   // 댓글 삭제 버튼 이벤트 추가
@@ -135,7 +143,10 @@ function loadComments(boardId) {
   deleteButtons.forEach((button) => {
     button.addEventListener("click", (event) => {
       const contextId = event.target.dataset.id;
-      deleteComment(contextId);
+      const isConfirmed = confirm("댓글을 삭제하시겠습니까?");
+      if (isConfirmed) {
+        deleteComment(contextId);
+      }
       loadComments(boardId); // 삭제 후 댓글 목록 다시 로드
     });
   });
@@ -143,11 +154,11 @@ function loadComments(boardId) {
 
 // 댓글 삭제 함수
 function deleteComment(contextId) {
-  let existingContexts = JSON.parse(localStorage.getItem("contexts")) || [];
+  let existingContexts = JSON.parse(localStorage.getItem(COMMENTS_KEY)) || []; // 키를 COMMENTS_KEY로 변경
   existingContexts = existingContexts.filter(
     (context) => context.contextId !== parseInt(contextId)
   );
-  localStorage.setItem("contexts", JSON.stringify(existingContexts));
+  localStorage.setItem(COMMENTS_KEY, JSON.stringify(existingContexts));
 }
 
 function handleSaveBoard(event) {
@@ -219,8 +230,11 @@ function deleteBoard(boardId) {
   loadBoards(); // 게시글 목록 새로고침
 }
 
+let contextFormListenerAdded = false; // 이벤트 리스너가 추가되었는지 확인하는 플래그
+
 // 게시글 상세 내용 모달로 표시
 function showBoardDetail(board) {
+  disableScroll();
   const modalContent = document.createElement("div");
 
   modalContent.innerHTML = `
@@ -250,13 +264,17 @@ function showBoardDetail(board) {
   boardListModal.innerHTML = ""; // 기존 내용 초기화
   boardListModal.appendChild(modalContent);
   boardListModal.style.display = "flex"; // 모달 열기
+  contextListModal.style.display = "flex"; // 모달 열기
 
   // 댓글 폼의 submit 이벤트 처리
-  contextForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    handleSaveContext(board.boardId); // 게시글 ID를 전달하여 댓글 작성
-  });
-
+  if (!contextFormListenerAdded) {
+    // 리스너가 추가되지 않은 경우에만 추가
+    contextForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      handleSaveContext(board.boardId); // 게시글 ID를 전달하여 댓글 작성
+    });
+    contextFormListenerAdded = true; // 리스너가 추가되었음을 표시
+  }
   // 댓글 불러오기
   loadComments(board.boardId); // 해당 게시글의 댓글 불러오기
 
